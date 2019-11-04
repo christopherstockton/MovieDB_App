@@ -1,0 +1,54 @@
+<style>
+div {
+    text-align:left;
+}
+h1 {
+    color:black;
+}
+body {
+    background-color:#33ccff;
+    font-weight: bold;
+}
+</style>
+
+<body>
+<h1>New Employee Registration</h1>
+<br>
+<div>
+<%= form_with scope: :employee, local: true do |form| %>
+<p>
+   Employee ID: <%= form.number_field :"emp_id" %>
+</p>
+<p>
+    First Name: <%= form.text_field :first_name %>
+</p>
+<p>
+   Last Name: <%= form.text_field :last_name %>
+</p>
+<p>
+    DOB: <%= form.date_field :"date_of_birth" %>
+</p>
+<p>
+   Salary: <%= form.text_field :"salary" %>
+</p>
+<p>
+   Email: <%= form.text_field :"email" %>
+</p>
+<p>
+   Phone Number: <%= form.text_field :"phone" %>
+</p>
+<p>
+   Position: <%= form.text_field :"position" %>
+</p>
+<p>
+   Email: <%= form.text_field :"email" %>
+</p>
+
+ 
+<p>
+    <%= form.submit %>
+</p>
+</div>
+</body>
+
+<% end %>

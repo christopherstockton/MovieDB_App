@@ -1,0 +1,41 @@
+<style>
+body {
+    background-color: #33ccff;
+}
+
+h1 {
+  color:black;
+}
+
+p {
+  font-size:130%;
+}
+</style>
+
+<body>
+<h1>Listing Movie Reviews</h1>
+
+<p> 
+<%= link_to 'Post a new review', new_review_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+ 
+  <% @reviews.each do |review| %>
+    <tr>
+      <td><%= review.title %></td>
+      <td><%= review.text %></td>
+      <td><%= link_to 'Show', review_path(review) %></td>
+      <td><%= link_to 'Edit', edit_review_path(review) %></td>
+      <td><%= link_to 'Destroy', review_path(review),
+              method: :delete,
+              data: { confirm: 'Are you sure you want to destroy this review?' } %></td>
+    </tr>
+  <% end %>
+</table>
+</body>
