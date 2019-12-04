@@ -1,22 +1,27 @@
 <style>
+body {
+    background-color: #33ccff;
+}
+
+h1 {
+  color:black;
+}
+
+p {
+  font-size:130%;
+}
+
 div {
     text-align:right;
     display: inline-block;
 }
-h1 {
-    color:black;
-}
-body {
-    background-color:#33ccff;
-    font-weight: bold;
-}
 </style>
 
 <body>
-<h1>New Employee Registration!</h1>
+<h1>Edit Employee</h1>
 <br>
 <div>
-<%= form_with scope: :employee, url: employees_path, local: true do |form| %>
+<%= form_with(model: @employee, local: true) do |form| %>
 
   <% if @employee.errors.any? %>
     <div id="error_explanation">

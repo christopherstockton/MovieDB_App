@@ -1,0 +1,57 @@
+<style>
+div {
+    text-align:right;
+    display: inline-block;
+}
+h1 {
+    color:black;
+}
+body {
+    background-color:#33ccff;
+    font-weight: bold;
+}
+</style>
+
+<body>
+<h1>Edit Snack</h1>
+</br>
+<div>
+
+<%= form_with(model: @snack, local: true) do |form| %>
+
+  <% if @snack.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@snack.errors.count, "error") %> prohibited
+        this snack from being saved:
+      </h2>
+      <ul>
+        <% @snack.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<p>
+    Snack Name: <%= form.text_field :"snack_name" %>
+</p>
+<p>
+    Snack Brand: <%= form.text_field :"snack_brand" %>
+</p>
+<p>
+    Snack Description: <%= form.text_area :"snack_description" %>
+</p>
+<p>
+    Snack Cost: <%= form.text_field :"snack_cost" %>
+</p>
+
+<p>
+    <%= form.submit %>
+</p>
+<div>
+</body>
+
+<%= link_to 'Back', snacks_path %>
+
+<% end %>

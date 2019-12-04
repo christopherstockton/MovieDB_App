@@ -1,0 +1,39 @@
+<style>
+body {
+    background-color: #33ccff;
+}
+
+h1 {
+  color:black;
+}
+
+p {
+  font-size:130%;
+}
+</style>
+
+<body>
+<h1>New Snack Created Successfully!</h1>
+</br>
+<p>
+  <strong>Snack Name:</strong>
+  <%= @snack.snack_name %>
+</p>
+ 
+<p>
+  <strong>Snack Brand:</strong>
+  <%= @snack.snack_brand %>
+</p>
+
+<p>
+  <strong>Snack Description:</strong>
+  <%= @snack.snack_description %>
+</p>
+
+<p>
+  <strong>Snack Cost:</strong>
+  <%= @snack.snack_cost %>
+</p>
+</body>
+
+<%= link_to 'Back', snacks_path %>

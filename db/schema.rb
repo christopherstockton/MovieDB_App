@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191016005930) do
+ActiveRecord::Schema.define(version: 20191204133554) do
 
   create_table "advisors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "advisor_name"
@@ -35,6 +35,18 @@ ActiveRecord::Schema.define(version: 20191016005930) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "emp_id"
+    t.text "first_name"
+    t.text "last_name"
+    t.date "date_of_birth"
+    t.text "salary"
+    t.text "email"
+    t.text "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "grades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "course_number"
     t.string "grade"
@@ -49,6 +61,15 @@ ActiveRecord::Schema.define(version: 20191016005930) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "snacks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "snack_name"
+    t.string "snack_brand"
+    t.text "snack_description"
+    t.string "snack_cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "first_name"
     t.string "last_name"
@@ -57,6 +78,14 @@ ActiveRecord::Schema.define(version: 20191016005930) do
     t.integer "advisor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "comments", "reviews"

@@ -1,0 +1,14 @@
+<h1>LOGIN</h1>
+<p>Please Sign up or Login to continue</p>
+
+<% if current_user %>
+  Logged in as <%= current_user.email %>.
+  <br>
+  <%= link_to 'Go To Main Page', movie_index_path %>
+  <br>
+  <%= link_to 'Log Out', logout_path %>
+<% else %>
+  <%= link_to 'Sign Up', signup_path %> or 
+  <%= link_to 'Log In', login_path %>
+<% end %>
+<p id=”notice”><%= notice %></p>

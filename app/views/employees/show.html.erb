@@ -1,0 +1,46 @@
+<style>
+body {
+    background-color: #33ccff;
+}
+
+h1 {
+  color:black;
+}
+
+p {
+  font-size:130%;
+}
+</style>
+
+<h1>New Employee Created Successfully!</h1>
+<p>
+  <strong>ID</strong>
+  <%= @employee.emp_id %>
+</p>
+<p>
+  <strong>First Name:</strong>
+  <%= @employee.first_name %>
+</p>
+<p>
+  <strong>Last Name:</strong>
+  <%= @employee.last_name %>
+</p>
+<p>
+  <strong>DOB:</strong>
+  <%= @employee.date_of_birth %>
+</p>
+<p>
+  <strong>Salary:</strong>
+  <%= @employee.salary %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @employee.email %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%= @employee.phone %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %>
+<%= link_to 'Back', employees_path %>

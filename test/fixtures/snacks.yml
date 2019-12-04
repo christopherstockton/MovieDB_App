@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  snack_name: MyString
+  snack_brand: MyString
+  snack_description: MyText
+  snack_cost: MyString
+
+two:
+  snack_name: MyString
+  snack_brand: MyString
+  snack_description: MyText
+  snack_cost: MyString

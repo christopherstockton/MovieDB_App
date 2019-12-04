@@ -1,0 +1,43 @@
+<style>
+body {
+    background-color: #33ccff;
+}
+
+h1 {
+  color:black;
+}
+
+p {
+  font-size:130%;
+}
+</style>
+
+<h1>Listing Our Snack Selection</h1>
+
+<%= link_to 'New Snack', new_snack_path %>
+
+<table>
+  <tr>
+    <th>Snack Name</th>
+    <th>Snack Brand</th>
+    <th>Snack Description</th>
+    <th>Snack Cost</th>
+
+  </tr>
+ 
+  <% @snacks.each do |snack| %>
+    <tr>
+      <td><%= snack.snack_name %></td>
+      <td><%= snack.snack_brand %></td>
+      <td><%= snack.snack_description %></td>
+      <td><%= snack.snack_cost %></td>
+      <td><%= link_to 'Show', snack_path(snack) %></td>
+      <td><%= link_to 'Edit', edit_snack_path(snack) %></td>
+      <td><%= link_to 'Delete Record', snack_path(snack),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+</br>
+<%= link_to 'Go To Main Page', movie_index_path %>
