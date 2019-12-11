@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  http_basic_authenticate_with name: "cstockton", password: "secret123", except: [:index, :show, :new, :create]
+  
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users

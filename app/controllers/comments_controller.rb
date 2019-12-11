@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  # http_basic_authenticate_with name: "cstockton", password: "secret", except: [:index, :show]
+  http_basic_authenticate_with name: "cstockton", password: "secret123", only: :destroy
 
   def create
     @review = Review.find(params[:review_id])

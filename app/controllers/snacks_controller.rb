@@ -1,4 +1,6 @@
 class SnacksController < ApplicationController
+    http_basic_authenticate_with name: "cstockton", password: "secret123", except: [:index, :show, :new]
+    
     def index
         @snacks = Snack.all
     end

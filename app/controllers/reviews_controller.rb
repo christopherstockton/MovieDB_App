@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    http_basic_authenticate_with name: "cstockton", password: "secret123", except: [:index, :show]
+    http_basic_authenticate_with name: "cstockton", password: "secret123", except: [:index, :show, :new]
 
     def index
         @reviews = Review.all
